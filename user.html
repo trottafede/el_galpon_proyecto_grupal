@@ -63,40 +63,29 @@
     </nav>
 
     <!-- form -->
-    <form class="row g-3">
+    <form class="row g-3" id="form">
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Email</label>
-        <input type="email" class="form-control" id="inputEmail4" />
+        <input type="email" class="form-control" id="inputEmail4" required/>
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label"
-          >Número de Telefono</label
-        >
-        <input type="text" class="form-control" id="inputPassword4" />
+        <label for="inputPassword4" class="form-label">Número de Telefono</label>
+        <input type="tel" class="form-control" id="inputNum" required/>
       </div>
       <div class="col-md-6">
         <label for="inputAddress" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="inputAddress" />
+        <input type="text" class="form-control" id="inputNombre" required/>
       </div>
       <div class="col-md-6">
         <label for="inputAddress2" class="form-label">Apellido</label>
-        <input type="text" class="form-control" id="inputAddress2" />
+        <input type="text" class="form-control" id="inputApellido" required/>
       </div>
-      <div class="col-md-6">
-        <button type="submit" class="btn btn-primary">Sign in</button>
-      </div>
-      <div class="col-md-6">
-        <button type="button" class="btn btn-primary" id="botonSorteo">
-          Sorteo
-        </button>
-      </div>
+        <input type="text" name="" id="codigo"></input>
+        <button type="submit" id="ingresar" class="btn btn-primary">Ingregar codigo</button>
     </form>
-
-    <div id="sorteos">
-      <!-- <label for="codigo">Ingrese</label>
-      <input type="text" name="" id="codigo"> -->
-    </div>
-
+    <svg id="barcode"></svg>
+    
+    <div id="sorteos"></div>
     <footer class="footer bg-dark text-white">
       <div class="container">
         <div class="row">
@@ -145,6 +134,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="cdn.jsdelivr.net_npm_jsbarcode@3.11.5_dist_JsBarcode.all.min.js"></script>
     <script src="user.js"></script>
   </body>
 </html>
