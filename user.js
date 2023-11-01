@@ -2,12 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const botonSorteo = document.getElementById("ingresar");
   const form = document.getElementById("form");
   const info = document.getElementById("sorteos")
+  const participacionUser = document.getElementById("participacion")
   let sorteo = JSON.parse(localStorage.getItem("lista")) || [];
 
+
+  //participaciones
   if (!sorteo == []){
     info.innerHTML = ``
     for(const user of sorteo){
-      info.innerHTML += `<p>${user.nombre} - ${user.participacion}</p>`
+      info.innerHTML += `
+      <p>${user.nombre} - ${user.participacion}</p>
+      `
     }
   }
    
@@ -26,8 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
       apellido: apellido.value,
       telefono: telefono.value
     }
-
     const personaEncontrada = sorteo.find(user => user.participacion == codigoInput.value);
+    
     if(personaEncontrada){
       alert("el codigo es invalido")
     }else{
@@ -40,19 +45,22 @@ document.addEventListener("DOMContentLoaded", () => {
         JsBarcode(barcode, valor_codigo, {
           format: "codabar",
           lineColor: "#000",
-          width: 4,
+          width: 2,
           height: 40,
           displayValue: true
         });
       });
     }
-
-    
-
-    info.innerHTML = ``
+    info.innerHTML = ``;
     for(const user of sorteo){
       info.innerHTML += `<p>${user.nombre} - ${user.participacion}</p>`
     }
+
+  
+
+    
+
+    
  
     
   }
